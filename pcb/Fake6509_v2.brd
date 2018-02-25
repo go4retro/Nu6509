@@ -2328,10 +2328,10 @@ design rules under a new name.</description>
 <wire x1="53.355" y1="11.18" x2="7.87" y2="11.18" width="0.1524" layer="16"/>
 <wire x1="7.87" y1="11.18" x2="7.37" y2="11.68" width="0.1524" layer="16"/>
 </signal>
-<signal name="PHI2_6502">
+<signal name="PHI2O_6502">
 <contactref element="IC2" pad="39"/>
 </signal>
-<signal name="PHI2_6509">
+<signal name="PHI2I_6509">
 <contactref element="IC1" pad="40"/>
 <contactref element="SJ1" pad="3"/>
 <wire x1="9.41" y1="12.18" x2="8.89" y2="12.7" width="0.1524" layer="16"/>
@@ -2357,10 +2357,6 @@ design rules under a new name.</description>
 <wire x1="31.75" y1="10.16" x2="26.594" y2="10.16" width="0.3048" layer="1"/>
 <polygon width="0.3048" layer="1">
 <vertex x="21.9075" y="15.24"/>
-<vertex x="21.9075" y="11.43"/>
-<vertex x="19.3675" y="11.43"/>
-<vertex x="19.3675" y="8.89"/>
-<vertex x="21.9075" y="8.89"/>
 <vertex x="21.9075" y="5.08"/>
 <vertex x="36.5125" y="5.08"/>
 <vertex x="40.9575" y="9.525"/>
@@ -2531,7 +2527,7 @@ design rules under a new name.</description>
 <wire x1="12.7" y1="16.51" x2="12.7" y2="8.89" width="0.1524" layer="1"/>
 <wire x1="12.7" y1="8.89" x2="17.78" y2="3.81" width="0.1524" layer="1"/>
 </signal>
-<signal name="PHI1_6509">
+<signal name="PHI1I_6509">
 <contactref element="IC1" pad="38"/>
 <contactref element="SJ1" pad="1"/>
 <wire x1="11.684" y1="15.24" x2="11.684" y2="18.034" width="0.1524" layer="1"/>
@@ -2542,7 +2538,7 @@ design rules under a new name.</description>
 <via x="11.684" y="13.97" extent="1-16" drill="0.3048"/>
 <wire x1="11.684" y1="13.97" x2="11.684" y2="15.24" width="0.1524" layer="1"/>
 </signal>
-<signal name="PHI0_6502">
+<signal name="PHI2I_6502">
 <contactref element="SJ1" pad="2"/>
 <contactref element="IC2" pad="37"/>
 <wire x1="10.16" y1="16.51" x2="10.16" y2="13.97" width="0.1524" layer="1"/>

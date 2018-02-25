@@ -28,7 +28,8 @@ module Fake6509(input _reset,
                 inout [7:0]data_cpu,
                 input rdy,
                 input sync,
-                output [3:0]address_bank
+                output [3:0]address_bank,
+                output [3:0]test
                );
  
 wire [8:0]data_opcode;
@@ -38,6 +39,8 @@ wire data_clock2;
 wire data_clock3;
 wire data_clock4;
 wire data_clock5;
+
+assign test = address_bank;
 
 /* This Verilog attempts to implement the circuit by Dr. Jefyll in this post:
    http://forum.6502.org/viewtopic.php?p=17597&sid=0966e1fa047d491a969a4693b5fed5fd#p17597
@@ -60,7 +63,8 @@ register #(.WIDTH(1))                     reg_clock5(clock, !_reset, rdy, data_c
 // bank selection
 assign address_bank =                     ( (data_clock5 & !sync) | data_clock4 ? data_0001 : data_0000);
 // read bank registers in any bank
-assign data_cpu =                         ( r_w & clock & (address_cpu[15:1] == 0) ? ( address_cpu[0] ? data_0001 : data_0000) : 8'bz);
+//wire [3:0]data_bank =                     (address_cpu[0] ? data_0001 : data_0000);
+//assign data_cpu =                         ( r_w & clock & (address_cpu[15:1] == 15'b000000000000000) ? {4'b1111,data_bank} : 8'bz);
 
 endmodule
 

@@ -6389,14 +6389,14 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="91.44" y1="127" x2="99.06" y2="127" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="PHI2_6502" class="0">
+<net name="PHI2O_6502" class="0">
 <segment>
 <wire x1="58.42" y1="127" x2="68.58" y2="127" width="0.1524" layer="91"/>
 <label x="68.58" y="127" size="1.27" layer="95" xref="yes"/>
 <pinref part="IC2" gate="A" pin="PHI2"/>
 </segment>
 </net>
-<net name="PHI2_6509" class="0">
+<net name="PHI2I_6509" class="0">
 <segment>
 <wire x1="27.94" y1="83.82" x2="20.32" y2="83.82" width="0.1524" layer="91"/>
 <label x="20.32" y="83.82" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -6772,7 +6772,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <label x="20.32" y="167.64" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="PHI1_6509" class="0">
+<net name="PHI1I_6509" class="0">
 <segment>
 <pinref part="IC1" gate="A" pin="PHI1"/>
 <wire x1="27.94" y1="88.9" x2="20.32" y2="88.9" width="0.1524" layer="91"/>
@@ -6789,7 +6789,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <label x="91.44" y="116.84" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="PHI0_6502" class="0">
+<net name="PHI2I_6502" class="0">
 <segment>
 <pinref part="SJ1" gate="G$1" pin="2"/>
 <pinref part="IC2" gate="A" pin="PHI0"/>

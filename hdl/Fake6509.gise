@@ -66,7 +66,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1519496087" xil_pn:in_ck="3440939892072300691" xil_pn:name="TRANEXT_xstsynthesize_xc9500xl" xil_pn:prop_ck="-6831109506592135983" xil_pn:start_ts="1519496079">
+    <transform xil_pn:end_ts="1519540802" xil_pn:in_ck="3440939892072300691" xil_pn:name="TRANEXT_xstsynthesize_xc9500xl" xil_pn:prop_ck="-6831109506592135983" xil_pn:start_ts="1519540796">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Fake6509.lso"/>
@@ -81,12 +81,13 @@
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
     </transform>
-    <transform xil_pn:end_ts="1519497238" xil_pn:in_ck="3691621065424583415" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="4784892253642964653" xil_pn:start_ts="1519497238">
+    <transform xil_pn:end_ts="1519520227" xil_pn:in_ck="3691621065424583415" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="4784892253642964653" xil_pn:start_ts="1519520227">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1519497243" xil_pn:in_ck="5399587319378307624" xil_pn:name="TRAN_ngdbuild" xil_pn:prop_ck="-2081320714713457669" xil_pn:start_ts="1519497238">
+    <transform xil_pn:end_ts="1519540807" xil_pn:in_ck="5399587319378307624" xil_pn:name="TRAN_ngdbuild" xil_pn:prop_ck="-2081320714713457669" xil_pn:start_ts="1519540802">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Fake6509.bld"/>
       <outfile xil_pn:name="Fake6509.ngd"/>
@@ -94,7 +95,7 @@
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1519497254" xil_pn:in_ck="3691621065424575922" xil_pn:name="TRANEXT_vm6File_xc9500xl" xil_pn:prop_ck="-8094714781205613394" xil_pn:start_ts="1519497243">
+    <transform xil_pn:end_ts="1519540816" xil_pn:in_ck="3691621065424575922" xil_pn:name="TRANEXT_vm6File_xc9500xl" xil_pn:prop_ck="-8094714781205613394" xil_pn:start_ts="1519540807">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -112,7 +113,7 @@
       <outfile xil_pn:name="Fake6509_html"/>
       <outfile xil_pn:name="Fake6509_pad.csv"/>
     </transform>
-    <transform xil_pn:end_ts="1519497256" xil_pn:in_ck="3691621065424584786" xil_pn:name="TRANEXT_crtProg_xc9500" xil_pn:prop_ck="-6294026017969277533" xil_pn:start_ts="1519497254">
+    <transform xil_pn:end_ts="1519540818" xil_pn:in_ck="3691621065424584786" xil_pn:name="TRANEXT_crtProg_xc9500" xil_pn:prop_ck="-6294026017969277533" xil_pn:start_ts="1519540816">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Fake6509.jed"/>
