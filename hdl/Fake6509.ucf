@@ -22,7 +22,7 @@ NET "address_cpu<6>"  LOC = "P57"  ;
 NET "address_cpu<7>"  LOC = "P58"  ; 
 NET "address_cpu<8>"  LOC = "P59"  ; 
 NET "address_cpu<9>"  LOC = "P60"  ; 
-NET "clock"  LOC = "P9"  ; 
+NET "clock"  LOC = "P49"  ;
 NET "data_cpu<0>"  LOC = "P12"  ; 
 NET "data_cpu<1>"  LOC = "P13"  ; 
 NET "data_cpu<2>"  LOC = "P15"  ; 
@@ -31,13 +31,20 @@ NET "data_cpu<4>"  LOC = "P52"  ;
 NET "data_cpu<5>"  LOC = "P51"  ; 
 NET "data_cpu<6>"  LOC = "P27"  ; 
 NET "data_cpu<7>"  LOC = "P25"  ; 
+NET "phi1_6509"  LOC = "P10"  ; 
+NET "phi2_6502"  LOC = "P32"  ; 
+NET "phi2_6509"  LOC = "P9"  ; 
 NET "r_w"  LOC = "P11"  ; 
 NET "rdy"  LOC = "P7"  ; 
 NET "sync"  LOC = "P6"  ; 
-NET "test<0>"  LOC = "P45"  ;
-NET "test<1>"  LOC = "P44"  ;
-NET "test<2>"  LOC = "P43"  ;
-NET "test<3>"  LOC = "P42"  ;
+NET "test<0>"  LOC = "P45"  ; 
+NET "test<1>"  LOC = "P44"  ; 
+NET "test<2>"  LOC = "P43"  ; 
+NET "test<3>"  LOC = "P42"  ; 
+NET "test<4>"  LOC = "P40"  ;
+NET "test<5>"  LOC = "P39"  ;
+NET "test<6>"  LOC = "P38"  ;
+NET "test<7>"  LOC = "P36"  ;
 
 #PACE: Start of PACE Area Constraints
 

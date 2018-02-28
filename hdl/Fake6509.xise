@@ -80,7 +80,7 @@
     <property xil_pn:name="Hierarchy Separator" xil_pn:value="/" xil_pn:valueState="default"/>
     <property xil_pn:name="I/O Pin Termination" xil_pn:value="Keeper" xil_pn:valueState="default"/>
     <property xil_pn:name="ISim UUT Instance Name" xil_pn:value="UUT" xil_pn:valueState="default"/>
-    <property xil_pn:name="Implementation Template" xil_pn:value="Optimize Balance" xil_pn:valueState="default"/>
+    <property xil_pn:name="Implementation Template" xil_pn:value="Optimize Speed" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Implementation Top" xil_pn:value="Module|Fake6509" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Implementation Top File" xil_pn:value="Fak6509.v" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Implementation Top Instance Path" xil_pn:value="/Fake6509" xil_pn:valueState="non-default"/>
@@ -126,7 +126,7 @@
     <property xil_pn:name="Other XST Command Line Options" xil_pn:value="" xil_pn:valueState="default"/>
     <property xil_pn:name="Output Extended Identifiers" xil_pn:value="false" xil_pn:valueState="default"/>
     <property xil_pn:name="Output File Name" xil_pn:value="Fake6509" xil_pn:valueState="default"/>
-    <property xil_pn:name="Output Slew Rate" xil_pn:value="Slow" xil_pn:valueState="non-default"/>
+    <property xil_pn:name="Output Slew Rate" xil_pn:value="Fast" xil_pn:valueState="default"/>
     <property xil_pn:name="Overwrite Compiled Libraries" xil_pn:value="false" xil_pn:valueState="default"/>
     <property xil_pn:name="Package" xil_pn:value="VQ64" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Port to be used" xil_pn:value="Auto - default" xil_pn:valueState="default"/>
@@ -203,6 +203,7 @@
     <property xil_pn:name="WYSIWYG" xil_pn:value="None" xil_pn:valueState="default"/>
     <property xil_pn:name="Working Directory" xil_pn:value="." xil_pn:valueState="non-default"/>
     <property xil_pn:name="XOR Preserve" xil_pn:value="true" xil_pn:valueState="default"/>
+    <property xil_pn:name="iMPACT Project File" xil_pn:value="auto_project.ipf" xil_pn:valueState="non-default"/>
     <!--                                                                                  -->
     <!-- The following properties are for internal use only. These should not be modified.-->
     <!--                                                                                  -->
