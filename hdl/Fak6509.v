@@ -35,77 +35,57 @@ module Fake6509(input _reset,
                 input clock
                );
  
-wire [8:0]data_opcode;
 wire [3:0]data_0000;
 wire [3:0]data_0001;
-wire data_clock2;
-wire data_clock3;
-wire data_clock4;
-wire data_clock5;
-wire ce_reg;
-wire oe_reg;
+wire [1:0]data_cycle1;
+wire data_cycle2;
+wire data_cycle3;
+wire data_cycle4;
+wire data_cycle5;
+wire sel_bank;
+wire ce_bank;
+wire oe_bank;
+wire we_bank;
 
-reg [4:0]ctr;
 
-assign test[0] = _reset;
-assign test[1] = phi2_6502;
-assign test[2] = r_w;
-assign test[3] = (((address_cpu == 16'h0097) & (data_cpu == 8'h00)) 
-                  | ((address_cpu == 16'h03f8) & (data_cpu == 8'h00))) & !r_w & _reset;
-assign test[4] = phi1_6509;
-assign test[5] = phi2_6509;
-assign test[6] = phi2_6502;
-assign test[7] = ctr[3];
+assign test[0] = 0;
+assign test[1] = 0;
+assign test[2] = 0;
+assign test[3] = 0;
+assign test[4] = 0;
+assign test[5] = 0;
+assign test[6] = 0;
+assign test[7] = 0;
 
+assign phi2_6502 =                        phi1_6509;
 
 /* This Verilog attempts to implement the circuit by Dr. Jefyll in this post:
    http://forum.6502.org/viewtopic.php?p=17597&sid=0966e1fa047d491a969a4693b5fed5fd#p17597
-*/
+*/
+
+assign ce_bank =                          address_cpu[15:1] == 0;
+assign we_bank =                          ce_bank & !r_w;
 // Normal bank register (called Execution bank in MOS documentation)
-register #(.WIDTH(4), .RESET(4'b1111))    reg_0000(phi2_6509, !_reset, !r_w & address_cpu == 0, data_cpu[3:0], data_0000);
+register #(.WIDTH(4), .RESET(4'b1111))    reg_0000(phi2_6502, !_reset, we_bank & !address_cpu[0], data_cpu[3:0], data_0000);
 // Indirect bank register (used for LDA Indirect, Y and STA Indirect, Y)
-register #(.WIDTH(4), .RESET(4'b1111))    reg_0001(phi2_6509, !_reset, !r_w & address_cpu == 1, data_cpu[3:0], data_0001);
+register #(.WIDTH(4), .RESET(4'b1111))    reg_0001(phi2_6502, !_reset, we_bank & address_cpu[0], data_cpu[3:0], data_0001);
 // store copy of various important signals.  
-// Note: This could be reduced to saving SYNC & D7 & !D6 & D4 & !D3 & !D2 & !D1 & D0 and A0 as FLAG, and then computing A0 ^ Saved_A0 & FLAG
-register #(.WIDTH(9))                     reg_opcode(phi2_6509, !_reset, rdy, {sync, data_cpu[7:6], data_cpu[4:0], address_cpu[0]}, data_opcode);
+register #(.WIDTH(2))                     reg_opcode(phi2_6502, !_reset, rdy, {sync & data_cpu[7] & !data_cpu[6] & (data_cpu[4:0] == 5'b10001), address_cpu[0]}, data_cycle1);
 // compute the outcome of our combinatorial decision and store
-register #(.WIDTH(1))                     reg_clock2(phi2_6509, !_reset, rdy, (data_opcode[8:1] == 8'b11010001) & (data_opcode[0] ^ address_cpu[0]), data_clock2);
+register #(.WIDTH(1))                     reg_clock2(phi2_6502, !_reset, rdy, data_cycle1[1] & (data_cycle1[0] ^ address_cpu[0]), data_cycle2);
 // shift
-register #(.WIDTH(1))                     reg_clock3(phi2_6509, !_reset, rdy, data_clock2, data_clock3);
+register #(.WIDTH(1))                     reg_clock3(phi2_6502, !_reset, rdy, data_cycle2, data_cycle3);
 // shift
-register #(.WIDTH(1))                     reg_clock4(phi2_6509, !_reset, rdy, data_clock3, data_clock4);
+register #(.WIDTH(1))                     reg_clock4(phi2_6502, !_reset, rdy, data_cycle3, data_cycle4);
 // shift
-register #(.WIDTH(1))                     reg_clock5(phi2_6509, !_reset, rdy, data_clock4, data_clock5);
+register #(.WIDTH(1))                     reg_clock5(phi2_6502, !_reset, rdy, data_cycle4, data_cycle5);
 // bank selection
-assign address_bank =                     ( (data_clock5 & !sync) | data_clock4 ? data_0001 : data_0000);
-// read bank registers in any bank
-wire [3:0]data_bank =                     (address_cpu[0] ? data_0001 : (oe_reg ? 4'he : data_0000));
-assign ce_reg =                           r_w & phi2_6509 & (address_cpu[15:1] == 15'b000000000000000);
-assign oe_reg =                           r_w & ce_reg;
-assign data_cpu =                         (oe_reg  ? {4'b1111,data_bank} : 8'bz);
-
-reg q;
-always @ (negedge phi1_6509, posedge phi2_6509)
-begin
-  if(phi2_6509)
-		q <= 0;
-  else
-	   q <= 1;
-end
-
-always @ (posedge clock, negedge phi2_6509)
-begin
-  if(!phi2_6509)
-		ctr <= 0;
-  else
-	   ctr <= ctr + 1;
-end
-
-  
-//assign phi2_6502 = q | (phi2_6509 & !phi1_6509);
-//assign phi2_6502 = !(!phi1_6509 & (ctr < 5'h0c));
-assign phi2_6502 = !phi2_6509;
-//assign phi2_6502 = ((ctr > 5'h00) & (ctr < 5'h0c));
+assign sel_bank =                         (data_cycle5 & !sync) | data_cycle4;
+assign address_bank =                     ( sel_bank ? data_0001 : data_0000);
+// read bank registers in any bank.
+wire [3:0]data_bank =                     (address_cpu[0] ? data_0001 : data_0000);
+assign oe_bank =                          r_w & phi2_6502 & ce_bank;
+assign data_cpu =                         (oe_bank  ? {4'b1111,data_bank} : 8'bz);
 
 endmodule
 
