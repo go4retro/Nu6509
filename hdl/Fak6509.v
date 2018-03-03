@@ -64,7 +64,8 @@ assign phi2_6502 =                        phi1_6509;
 */
 
 assign ce_bank =                          address_cpu[15:1] == 0;
-assign we_bank =                          ce_bank & !r_w;
+assign we_bank =                          ce_bank & !r_w;assign oe_bank =                          r_w & phi2_6502 & ce_bank;
+
 // Normal bank register (called Execution bank in MOS documentation)
 register #(.WIDTH(4), .RESET(4'b1111))    reg_0000(phi2_6502, !_reset, we_bank & !address_cpu[0], data_cpu[3:0], data_0000);
 // Indirect bank register (used for LDA Indirect, Y and STA Indirect, Y)
@@ -84,7 +85,6 @@ assign sel_bank =                         (data_cycle5 & !sync) | data_cycle4;
 assign address_bank =                     ( sel_bank ? data_0001 : data_0000);
 // read bank registers in any bank.
 wire [3:0]data_bank =                     (address_cpu[0] ? data_0001 : data_0000);
-assign oe_bank =                          r_w & phi2_6502 & ce_bank;
 assign data_cpu =                         (oe_bank  ? {4'b1111,data_bank} : 8'bz);
 
 endmodule
