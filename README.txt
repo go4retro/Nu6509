@@ -1,4 +1,4 @@
-MOS 6502 to MOS 6509 Adapter Schematic and Printed Circuit Board v1.0
+MOS 6502 to MOS 6509 Adapter v1.0
 Copyright (C) 2017-18  Jim Brain, RETRO Innovations
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
