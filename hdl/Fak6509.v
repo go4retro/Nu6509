@@ -82,10 +82,11 @@ register #(.WIDTH(1))                     reg_clock4(phi2_6502, !_reset, rdy, da
 register #(.WIDTH(1))                     reg_clock5(phi2_6502, !_reset, rdy, data_cycle4, data_cycle5);
 // bank selection
 assign sel_bank =                         (data_cycle5 & !sync) | data_cycle4;
-assign address_bank =                     ( sel_bank ? data_0001 : data_0000);
+//assign address_bank =                     ( sel_bank ? data_0001 : data_0000);
+assign address_bank =                     (ce_bank & r_w ? 4'hf: ( sel_bank ? data_0001 : data_0000));
 // read bank registers in any bank.
 wire [3:0]data_bank =                     (address_cpu[0] ? data_0001 : data_0000);
-assign data_cpu =                         (oe_bank  ? {4'b1111,data_bank} : 8'bz);
+assign data_cpu =                         (oe_bank  ? {4'b0000,data_bank} : 8'bz);
 
 endmodule
 
