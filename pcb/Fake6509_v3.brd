@@ -1622,7 +1622,6 @@
 <rectangle x1="-20.16125" y1="3.06705" x2="-19.74215" y2="3.07975" layer="25"/>
 <rectangle x1="-21.88845" y1="3.07975" x2="-21.64715" y2="3.09245" layer="25"/>
 <rectangle x1="-20.08505" y1="3.07975" x2="-19.81835" y2="3.09245" layer="25"/>
-<text x="-33.02" y="0.5715" size="0.0254" layer="25" font="vector" align="bottom-right">C:/Users/brain/projects/Fake6509/doc/Name.bmp</text>
 </plain>
 <libraries>
 <library name="rcl">
