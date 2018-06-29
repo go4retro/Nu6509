@@ -72,6 +72,7 @@ assign address_6509 =                     address_6502[15:13];
 register #(.WIDTH(4), .RESET(4'b1111))    reg_0000(phi2_6509, !_reset, we_bank & !address_6502[0], data_6502[3:0], data_0000);
 // Indirect bank register (used for LDA Indirect, Y and STA Indirect, Y)
 register #(.WIDTH(4), .RESET(4'b1111))    reg_0001(phi2_6509, !_reset, we_bank & address_6502[0], data_6502[3:0], data_0001);
+
 // store copy of various important signals.  
 register #(.WIDTH(2))                     reg_opcode(phi2_6509, !_reset, _rdy, {sync & data_6502[7] & !data_6502[6] & (data_6502[4:0] == 5'b10001), address_6502[0]}, data_cycle1);
 // compute the outcome of our combinatorial decision and store
