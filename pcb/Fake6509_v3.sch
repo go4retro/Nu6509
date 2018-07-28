@@ -5614,13 +5614,13 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="3V3" library="testpad" deviceset="PTR1" device="TP08R"/>
 <part name="TDO" library="testpad" deviceset="PTR1" device="TP08R"/>
 <part name="GND" library="testpad" deviceset="PTR1" device="TP08R"/>
-<part name="TMS1" library="testpad" deviceset="PTR1" device="TP08R"/>
-<part name="TMS2" library="testpad" deviceset="PTR1" device="TP08R"/>
-<part name="TMS3" library="testpad" deviceset="PTR1" device="TP08R"/>
-<part name="TMS4" library="testpad" deviceset="PTR1" device="TP08R"/>
-<part name="TMS5" library="testpad" deviceset="PTR1" device="TP08R"/>
-<part name="TMS6" library="testpad" deviceset="PTR1" device="TP08R"/>
-<part name="TMS7" library="testpad" deviceset="PTR1" device="TP08R"/>
+<part name="TEST0" library="testpad" deviceset="PTR1" device="TP08R"/>
+<part name="TEST1" library="testpad" deviceset="PTR1" device="TP08R"/>
+<part name="TEST2" library="testpad" deviceset="PTR1" device="TP08R"/>
+<part name="TEST3" library="testpad" deviceset="PTR1" device="TP08R"/>
+<part name="TEST4" library="testpad" deviceset="PTR1" device="TP08R"/>
+<part name="TEST5" library="testpad" deviceset="PTR1" device="TP08R"/>
+<part name="TEST6" library="testpad" deviceset="PTR1" device="TP08R"/>
 <part name="PWR" library="jumper" deviceset="SJ" device=""/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 </parts>
@@ -5683,13 +5683,13 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <instance part="3V3" gate="G$1" x="160.02" y="22.86" rot="R90"/>
 <instance part="TDO" gate="G$1" x="160.02" y="12.7" rot="R90"/>
 <instance part="GND" gate="G$1" x="160.02" y="10.16" rot="R90"/>
-<instance part="TMS1" gate="G$1" x="264.16" y="116.84" rot="R90"/>
-<instance part="TMS2" gate="G$1" x="264.16" y="111.76" rot="R90"/>
-<instance part="TMS3" gate="G$1" x="264.16" y="106.68" rot="R90"/>
-<instance part="TMS4" gate="G$1" x="264.16" y="96.52" rot="R90"/>
-<instance part="TMS5" gate="G$1" x="264.16" y="91.44" rot="R90"/>
-<instance part="TMS6" gate="G$1" x="264.16" y="86.36" rot="R90"/>
-<instance part="TMS7" gate="G$1" x="264.16" y="81.28" rot="R90"/>
+<instance part="TEST0" gate="G$1" x="264.16" y="116.84" rot="R90"/>
+<instance part="TEST1" gate="G$1" x="264.16" y="111.76" rot="R90"/>
+<instance part="TEST2" gate="G$1" x="264.16" y="106.68" rot="R90"/>
+<instance part="TEST3" gate="G$1" x="264.16" y="96.52" rot="R90"/>
+<instance part="TEST4" gate="G$1" x="264.16" y="91.44" rot="R90"/>
+<instance part="TEST5" gate="G$1" x="264.16" y="86.36" rot="R90"/>
+<instance part="TEST6" gate="G$1" x="264.16" y="81.28" rot="R90"/>
 <instance part="PWR" gate="1" x="66.04" y="106.68"/>
 <instance part="GND6" gate="1" x="73.66" y="101.6"/>
 </instances>
@@ -6666,51 +6666,51 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <label x="121.92" y="121.92" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="N$1" class="0">
+<net name="TEST0" class="0">
 <segment>
 <pinref part="IC4" gate="G$1" pin="FB3MC12"/>
-<pinref part="TMS1" gate="G$1" pin="TP"/>
+<pinref part="TEST0" gate="G$1" pin="TP"/>
 <wire x1="254" y1="116.84" x2="261.62" y2="116.84" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$2" class="0">
+<net name="TEST1" class="0">
 <segment>
-<pinref part="TMS2" gate="G$1" pin="TP"/>
+<pinref part="TEST1" gate="G$1" pin="TP"/>
 <pinref part="IC4" gate="G$1" pin="FB3MC10"/>
 <wire x1="261.62" y1="111.76" x2="254" y2="111.76" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$3" class="0">
+<net name="TEST2" class="0">
 <segment>
-<pinref part="TMS3" gate="G$1" pin="TP"/>
+<pinref part="TEST2" gate="G$1" pin="TP"/>
 <pinref part="IC4" gate="G$1" pin="FB3MC17"/>
 <wire x1="261.62" y1="106.68" x2="254" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$4" class="0">
+<net name="TEST3" class="0">
 <segment>
-<pinref part="TMS4" gate="G$1" pin="TP"/>
+<pinref part="TEST3" gate="G$1" pin="TP"/>
 <pinref part="IC4" gate="G$1" pin="FB3MC15"/>
 <wire x1="261.62" y1="96.52" x2="254" y2="96.52" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$5" class="0">
+<net name="TEST4" class="0">
 <segment>
-<pinref part="TMS5" gate="G$1" pin="TP"/>
+<pinref part="TEST4" gate="G$1" pin="TP"/>
 <pinref part="IC4" gate="G$1" pin="FB3MC14"/>
 <wire x1="261.62" y1="91.44" x2="254" y2="91.44" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$6" class="0">
+<net name="TEST5" class="0">
 <segment>
-<pinref part="TMS6" gate="G$1" pin="TP"/>
+<pinref part="TEST5" gate="G$1" pin="TP"/>
 <pinref part="IC4" gate="G$1" pin="FB3MC6"/>
 <wire x1="261.62" y1="86.36" x2="254" y2="86.36" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$7" class="0">
+<net name="TEST6" class="0">
 <segment>
-<pinref part="TMS7" gate="G$1" pin="TP"/>
+<pinref part="TEST6" gate="G$1" pin="TP"/>
 <pinref part="IC4" gate="G$1" pin="FB3MC11"/>
 <wire x1="261.62" y1="81.28" x2="254" y2="81.28" width="0.1524" layer="91"/>
 </segment>

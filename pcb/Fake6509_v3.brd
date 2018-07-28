@@ -3374,25 +3374,25 @@ design rules under a new name.</description>
 <attribute name="TP_SIGNAL_NAME" value="" x="-27.94" y="-3.175" size="1" layer="37"/>
 <attribute name="NAME" x="-27.869215625" y="-2.17646875" size="0.8128" layer="25" rot="R315"/>
 </element>
-<element name="TMS1" library="testpad" package="TP08R" value="PTR1TP08R" x="-33.9725" y="0.635" smashed="yes" rot="MR0">
+<element name="TEST0" library="testpad" package="TP08R" value="PTR1TP08R" x="-33.9725" y="0.635" smashed="yes" rot="MR0">
 <attribute name="TP_SIGNAL_NAME" value="" x="-33.9725" y="-1.27" size="1" layer="38" rot="MR0"/>
 </element>
-<element name="TMS2" library="testpad" package="TP08R" value="PTR1TP08R" x="-33.9725" y="-0.3175" smashed="yes" rot="MR0">
+<element name="TEST1" library="testpad" package="TP08R" value="PTR1TP08R" x="-33.9725" y="-0.3175" smashed="yes" rot="MR0">
 <attribute name="TP_SIGNAL_NAME" value="" x="-33.9725" y="-2.2225" size="1" layer="38" rot="MR0"/>
 </element>
-<element name="TMS3" library="testpad" package="TP08R" value="PTR1TP08R" x="-33.9725" y="-1.27" smashed="yes" rot="MR0">
+<element name="TEST2" library="testpad" package="TP08R" value="PTR1TP08R" x="-33.9725" y="-1.27" smashed="yes" rot="MR0">
 <attribute name="TP_SIGNAL_NAME" value="" x="-33.9725" y="-3.175" size="1" layer="38" rot="MR0"/>
 </element>
-<element name="TMS4" library="testpad" package="TP08R" value="PTR1TP08R" x="-33.9725" y="-2.2225" smashed="yes" rot="MR0">
+<element name="TEST3" library="testpad" package="TP08R" value="PTR1TP08R" x="-33.9725" y="-2.2225" smashed="yes" rot="MR0">
 <attribute name="TP_SIGNAL_NAME" value="" x="-33.9725" y="-4.1275" size="1" layer="38" rot="MR0"/>
 </element>
-<element name="TMS5" library="testpad" package="TP08R" value="PTR1TP08R" x="-33.9725" y="-3.175" smashed="yes" rot="MR0">
+<element name="TEST4" library="testpad" package="TP08R" value="PTR1TP08R" x="-33.9725" y="-3.175" smashed="yes" rot="MR0">
 <attribute name="TP_SIGNAL_NAME" value="" x="-33.9725" y="-5.08" size="1" layer="38" rot="MR0"/>
 </element>
-<element name="TMS6" library="testpad" package="TP08R" value="PTR1TP08R" x="-33.9725" y="-4.1275" smashed="yes" rot="MR0">
+<element name="TEST5" library="testpad" package="TP08R" value="PTR1TP08R" x="-33.9725" y="-4.1275" smashed="yes" rot="MR0">
 <attribute name="TP_SIGNAL_NAME" value="" x="-33.9725" y="-6.0325" size="1" layer="38" rot="MR0"/>
 </element>
-<element name="TMS7" library="testpad" package="TP08R" value="PTR1TP08R" x="-33.9725" y="-5.08" smashed="yes" rot="MR0">
+<element name="TEST6" library="testpad" package="TP08R" value="PTR1TP08R" x="-33.9725" y="-5.08" smashed="yes" rot="MR0">
 <attribute name="TP_SIGNAL_NAME" value="" x="-33.9725" y="-6.985" size="1" layer="38" rot="MR0"/>
 </element>
 <element name="PWR" library="jumper" package="SJ" value="" x="-17.4625" y="-8.89" smashed="yes" rot="R180">
@@ -4126,50 +4126,50 @@ design rules under a new name.</description>
 <wire x1="-20.97" y1="0.25" x2="-19.6175" y2="0.25" width="0.1524" layer="16"/>
 <wire x1="-19.6175" y1="0.25" x2="-18.415" y2="-0.9525" width="0.1524" layer="16"/>
 </signal>
-<signal name="N$1">
+<signal name="TEST0">
 <contactref element="IC4" pad="40"/>
-<contactref element="TMS1" pad="TP"/>
+<contactref element="TEST0" pad="TP"/>
 <wire x1="-32.37" y1="-0.25" x2="-33.0875" y2="-0.25" width="0.1524" layer="16"/>
 <wire x1="-33.0875" y1="-0.25" x2="-33.9725" y2="0.635" width="0.1524" layer="16"/>
 <via x="-33.9725" y="0.635" extent="1-16" drill="0.3048"/>
 </signal>
-<signal name="N$2">
-<contactref element="TMS2" pad="TP"/>
+<signal name="TEST1">
+<contactref element="TEST1" pad="TP"/>
 <contactref element="IC4" pad="39"/>
 <wire x1="-32.37" y1="-0.75" x2="-33.54" y2="-0.75" width="0.1524" layer="16"/>
 <wire x1="-33.54" y1="-0.75" x2="-33.9725" y2="-0.3175" width="0.1524" layer="16"/>
 <via x="-33.9725" y="-0.3175" extent="1-16" drill="0.3048"/>
 </signal>
-<signal name="N$3">
-<contactref element="TMS3" pad="TP"/>
+<signal name="TEST2">
+<contactref element="TEST2" pad="TP"/>
 <contactref element="IC4" pad="38"/>
 <wire x1="-32.37" y1="-1.25" x2="-33.9525" y2="-1.25" width="0.1524" layer="16"/>
 <wire x1="-33.9525" y1="-1.25" x2="-33.9725" y2="-1.27" width="0.1524" layer="16"/>
 <via x="-33.9725" y="-1.27" extent="1-16" drill="0.3048"/>
 </signal>
-<signal name="N$4">
-<contactref element="TMS4" pad="TP"/>
+<signal name="TEST3">
+<contactref element="TEST3" pad="TP"/>
 <contactref element="IC4" pad="36"/>
 <wire x1="-32.37" y1="-2.25" x2="-33.945" y2="-2.25" width="0.1524" layer="16"/>
 <wire x1="-33.945" y1="-2.25" x2="-33.9725" y2="-2.2225" width="0.1524" layer="16"/>
 <via x="-33.9725" y="-2.2225" extent="1-16" drill="0.3048"/>
 </signal>
-<signal name="N$5">
-<contactref element="TMS5" pad="TP"/>
+<signal name="TEST4">
+<contactref element="TEST4" pad="TP"/>
 <contactref element="IC4" pad="35"/>
 <wire x1="-32.37" y1="-2.75" x2="-33.5475" y2="-2.75" width="0.1524" layer="16"/>
 <wire x1="-33.5475" y1="-2.75" x2="-33.9725" y2="-3.175" width="0.1524" layer="16"/>
 <via x="-33.9725" y="-3.175" extent="1-16" drill="0.3048"/>
 </signal>
-<signal name="N$6">
-<contactref element="TMS6" pad="TP"/>
+<signal name="TEST5">
+<contactref element="TEST5" pad="TP"/>
 <contactref element="IC4" pad="34"/>
 <wire x1="-32.37" y1="-3.25" x2="-33.095" y2="-3.25" width="0.1524" layer="16"/>
 <wire x1="-33.095" y1="-3.25" x2="-33.9725" y2="-4.1275" width="0.1524" layer="16"/>
 <via x="-33.9725" y="-4.1275" extent="1-16" drill="0.3048"/>
 </signal>
-<signal name="N$7">
-<contactref element="TMS7" pad="TP"/>
+<signal name="TEST6">
+<contactref element="TEST6" pad="TP"/>
 <contactref element="IC4" pad="33"/>
 <wire x1="-32.37" y1="-3.75" x2="-32.6425" y2="-3.75" width="0.1524" layer="16"/>
 <wire x1="-32.6425" y1="-3.75" x2="-33.9725" y2="-5.08" width="0.1524" layer="16"/>
