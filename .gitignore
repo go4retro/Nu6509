@@ -168,4 +168,3 @@ pip-log.txt
 #Project Stuff
 .dep
 obj-*
-*.err
