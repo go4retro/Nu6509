@@ -39,11 +39,13 @@ module Fake6509(input _reset,
                 output reg [7:0]address_bank
                );
  
+
+
 reg [7:0]data_6502_out;
 reg [7:0]data_6509_out;
 wire [7:0]data_0000;
 wire [7:0]data_0001;
-reg [7:0]data_bank;
+wire [7:0]data_bank;
 wire [7:0]data_baddr;
 wire flag_opcode;
 wire data_cycle1;
@@ -66,9 +68,9 @@ reg [2:0]ctr;
 assign ce_bank =                          address_6502[15:1] == 0;
 assign we_bank =                          ce_bank & !r_w;assign oe_bank =                          r_w & ce_bank;
 
-assign sync =                             (flag_816 ? (vpa & vda) : vpa);
-assign mx =                               (flag_816 ? 'bz : _so);
-assign _abort =                           (flag_816 ? _so : 'bz);
+assign sync =                             ((ctr == 7) & flag_816 ? (vpa & vda) : vpa);
+assign mx =                               ((ctr == 7) & !flag_816 ? _so : 'bz);
+assign _abort =                           ((ctr == 7) & flag_816 ? _so : 'bz);
 assign flag_ext =                         flag_816 & !e;
 assign data_6509 =                        data_6509_out;
 assign data_6502 =                        data_6502_out;
@@ -88,16 +90,10 @@ register #(.WIDTH(1))                     reg_clock3(phi2_6509, !_reset, _rdy, d
 // shift
 register #(.WIDTH(1))                     reg_clock4(phi2_6509, !_reset, _rdy, data_cycle3, data_cycle4);
 // shift
-register #(.WIDTH(1))                     reg_clock5(phi2_6509, !_reset, _rdy, data_cycle4, data_cycle5);// bank address
+register #(.WIDTH(1))                     reg_clock5(phi2_6509, !_reset, _rdy, data_cycle4, data_cycle5);// bank selection
+assign sel_bank =                         (data_cycle5 & !sync) | data_cycle4;
+// '816 bank address
 register #(.WIDTH(8))                     reg_bank(!phi2_6509, !_reset, 1, data_6502, data_baddr);
-// bank selection
-assign sel_bank =                         (flag_816 ? flag_opcode & vda & !vpa : (data_cycle5 & !sync) | data_cycle4);
-fsm_flag						                  flag_fsm1(
-                                                    we_bank & address_6502[0] & phi2_6509 & !flag_ext, 
-                                                    !_reset, 
-                                                    data_6502, 
-                                                    flag_full
-                                                   );
 
 always @(*)
 begin
@@ -115,22 +111,7 @@ begin
    endcase
 end
 
-// read bank registers in any bank.
-always @(*)
-begin
-   case({flag_ext, flag_full, address_6502[0]})
-      3'b000:
-         data_bank = {4'b0000,data_0000[3:0]};
-      3'b001:
-         data_bank = {4'b0000,data_0001[3:0]};
-      3'b010:
-         data_bank = data_0000;
-      3'b011:
-         data_bank = data_0001;
-      default:
-         data_bank = data_baddr;
-   endcase
-end
+assign data_bank = (address_6502[0] ? data_0001 : data_0000);
 
 always @(*)
 begin
@@ -159,6 +140,15 @@ begin
    else if(ctr == 7)
       flag_816 <= e;
 end
+
+// to enable extended values, write $55,$aa,$00,$01 to $0001
+// to disable extended values, write $55,$aa,$00,$00 to $0001
+fsm_flag						                  flag_fsm1(
+                                                    we_bank & address_6502[0] & phi2_6509 & !flag_ext, 
+                                                    !_reset, 
+                                                    data_6502, 
+                                                    flag_full
+                                                   );
 
 endmodule
 module fsm_flag(
@@ -199,6 +189,7 @@ begin
 		endcase
 end
 endmodule
+
 
 
 
