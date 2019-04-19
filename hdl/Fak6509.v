@@ -1,23 +1,27 @@
 /*
-    Fake6509 - Adapter to use 6502 in 6509-based system
-    Copyright Jim Brain and RETRO Innovations, 2017-18
+   Fake6509 - Adapter to use 6502 in 6509-based system
+   Copyright (c) 2017-2018 Jim Brain dba RETRO Innovations
 
-    This program is free software; you can redistribute it and/or modify 
-    it under the terms of the GNU General Public License as published by 
-    the Free Software Foundation; either version 2 of the License, or 
-    (at your option) any later version.
+   Permission is hereby granted, free of charge, to any person obtaining a copy
+   of this software and associated documentation files (the "Software"), to deal
+   in the Software without restriction, including without limitation the rights
+   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+   copies of the Software, and to permit persons to whom the Software is
+   furnished to do so, subject to the following conditions:
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+   The above copyright notice and this permission notice shall be included in all
+   copies or substantial portions of the Software.
 
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+   SOFTWARE.
 
-    Fake6509.v: Routines to support mapping the 6509-specific bank
-    functionality onto the 6502.
+   Fake6509.v: Routines to support mapping the 6509-specific bank
+   functionality onto the 6502.
     
 */
 
@@ -65,7 +69,7 @@ reg [2:0]ctr;
    http://forum.6502.org/viewtopic.php?p=17597&sid=0966e1fa047d491a969a4693b5fed5fd#p17597
 */
 
-assign ce_bank =                          address_6502[15:1] == 0;
+assign ce_bank =                          !flag_ext & address_6502[15:1] == 0;
 assign we_bank =                          ce_bank & !r_w;assign oe_bank =                          r_w & ce_bank;
 
 assign sync =                             ((ctr == 7) & flag_816 ? (vpa & vda) : vpa);
@@ -115,9 +119,9 @@ assign data_bank = (address_6502[0] ? data_0001 : data_0000);
 
 always @(*)
 begin
-   if(oe_bank & !flag_ext & !flag_full)
+   if(oe_bank & !flag_full)
       data_6502_out = {4'b0000, data_bank[3:0]};
-   else if(oe_bank & !flag_ext & flag_full)
+   else if(oe_bank & flag_full)
       data_6502_out = data_bank;
    else if(r_w & _rdy & phi2_6509)
       data_6502_out = data_6509;
