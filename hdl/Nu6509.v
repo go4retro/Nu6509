@@ -25,23 +25,23 @@
     
 */
 
-module Fake6509(input _reset,
-                input phi2_6509,
-                input r_w,
-                input [15:0]address_6502,
-                inout [7:0]data_6502,
-                inout [7:0]data_6509,
-                input _rdy,
-                input be,
-                input vpa,
-                input vda,
-                input _so,
-                input e,
-                output sync,
-                output mx,
-                output _abort,
-                output reg [7:0]address_bank
-               );
+module Nu6509(input _reset,
+              input phi2_6509,
+              input r_w,
+              input [15:0]address_6502,
+              inout [7:0]data_6502,
+              inout [7:0]data_6509,
+              input _rdy,
+              input be,
+              input vpa,
+              input vda,
+              input _so,
+              input e,
+              output sync,
+              output mx,
+              output _abort,
+              output reg [7:0]address_bank
+             );
  
 
 
@@ -197,4 +197,4 @@ endmodule
 
 
 
-
+

@@ -7962,6 +7962,8 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="R1" library="rcl" deviceset="R-US_" device="R0402" value="10K"/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
+<part name="R2" library="rcl" deviceset="R-US_" device="R0402" value="10K"/>
+<part name="+3V5" library="supply1" deviceset="+3V3" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -8033,6 +8035,11 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <attribute name="VALUE" x="95.758" y="184.15" size="1.778" layer="96" rot="R270"/>
 </instance>
 <instance part="GND12" gate="1" x="99.06" y="170.18"/>
+<instance part="R2" gate="G$1" x="91.44" y="180.34" smashed="yes" rot="R270">
+<attribute name="NAME" x="92.9386" y="184.15" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="88.138" y="184.15" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="+3V5" gate="G$1" x="91.44" y="190.5"/>
 </instances>
 <busses>
 <bus name="A[0..15]">
@@ -8563,6 +8570,11 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="154.94" y1="22.86" x2="157.48" y2="22.86" width="0.1524" layer="91"/>
 <pinref part="3V3" gate="G$1" pin="TP"/>
 </segment>
+<segment>
+<pinref part="+3V5" gate="G$1" pin="+3V3"/>
+<pinref part="R2" gate="G$1" pin="1"/>
+<wire x1="91.44" y1="187.96" x2="91.44" y2="185.42" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="GND" class="0">
 <segment>
@@ -8678,6 +8690,11 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <pinref part="IC4" gate="G$1" pin="FB3MC4"/>
 <wire x1="223.52" y1="60.96" x2="223.52" y2="55.88" width="0.1524" layer="91"/>
 <label x="223.52" y="55.88" size="1.27" layer="95" rot="R270" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R2" gate="G$1" pin="2"/>
+<wire x1="91.44" y1="175.26" x2="91.44" y2="172.72" width="0.1524" layer="91"/>
+<label x="91.44" y="172.72" size="1.27" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="!RDY" class="0">
