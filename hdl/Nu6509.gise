@@ -21,8 +21,101 @@
 
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="Nu6509.xise"/>
 
-  <files xmlns="http://www.xilinx.com/XMLSchema"/>
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="Nu6509.bld"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="Nu6509.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_GYD" xil_pn:name="Nu6509.gyd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_JEDEC" xil_pn:name="Nu6509.jed"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="Nu6509.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MFD" xil_pn:name="Nu6509.mfd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGA" xil_pn:name="Nu6509.nga"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="Nu6509.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="Nu6509.ngd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="Nu6509.ngr"/>
+    <file xil_pn:fileType="FILE_PAD_MISC" xil_pn:name="Nu6509.pad"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PNX" xil_pn:name="Nu6509.pnx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Nu6509.prj"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="Nu6509.rpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="Nu6509.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="Nu6509.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_VM6" xil_pn:name="Nu6509.vm6"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="Nu6509.xml"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="Nu6509.xst"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="Nu6509_build.xml"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="Nu6509_html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="Nu6509_ngdbuild.xrpt"/>
+    <file xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="Nu6509_pad.csv"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="Nu6509_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
+  </files>
 
-  <transforms xmlns="http://www.xilinx.com/XMLSchema"/>
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1587082921" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1587082921">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1587082921" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-6509061780667830658" xil_pn:start_ts="1587082921">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1587082928" xil_pn:in_ck="1192361105034778212" xil_pn:name="TRANEXT_xstsynthesize_xc9500xl" xil_pn:prop_ck="2878076847665370813" xil_pn:start_ts="1587082921">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="Nu6509.lso"/>
+      <outfile xil_pn:name="Nu6509.ngc"/>
+      <outfile xil_pn:name="Nu6509.ngr"/>
+      <outfile xil_pn:name="Nu6509.prj"/>
+      <outfile xil_pn:name="Nu6509.stx"/>
+      <outfile xil_pn:name="Nu6509.syr"/>
+      <outfile xil_pn:name="Nu6509.xst"/>
+      <outfile xil_pn:name="Nu6509_xst.xrpt"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1587082928" xil_pn:in_ck="3787017383289891" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="5069202360566983001" xil_pn:start_ts="1587082928">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1587082933" xil_pn:in_ck="-6694130319476448448" xil_pn:name="TRAN_ngdbuild" xil_pn:prop_ck="-2081320714713457669" xil_pn:start_ts="1587082928">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="Nu6509.bld"/>
+      <outfile xil_pn:name="Nu6509.ngd"/>
+      <outfile xil_pn:name="Nu6509_ngdbuild.xrpt"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1587082955" xil_pn:in_ck="3787017383282398" xil_pn:name="TRANEXT_vm6File_xc9500xl" xil_pn:prop_ck="4833486397860057799" xil_pn:start_ts="1587082933">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="Nu6509.gyd"/>
+      <outfile xil_pn:name="Nu6509.mfd"/>
+      <outfile xil_pn:name="Nu6509.nga"/>
+      <outfile xil_pn:name="Nu6509.pad"/>
+      <outfile xil_pn:name="Nu6509.pnx"/>
+      <outfile xil_pn:name="Nu6509.rpt"/>
+      <outfile xil_pn:name="Nu6509.vm6"/>
+      <outfile xil_pn:name="Nu6509.xml"/>
+      <outfile xil_pn:name="Nu6509_build.xml"/>
+      <outfile xil_pn:name="Nu6509_html"/>
+      <outfile xil_pn:name="Nu6509_pad.csv"/>
+    </transform>
+    <transform xil_pn:end_ts="1587082957" xil_pn:in_ck="3787017383291262" xil_pn:name="TRANEXT_crtProg_xc9500" xil_pn:prop_ck="-6294026017969277533" xil_pn:start_ts="1587082955">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="Nu6509.jed"/>
+    </transform>
+    <transform xil_pn:end_ts="1587082955" xil_pn:in_ck="3787017383291262" xil_pn:name="TRAN_timRpt" xil_pn:prop_ck="111903974446" xil_pn:start_ts="1587082952">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+  </transforms>
 
 </generated_project>
